@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pizza.controller.PizzaController">
+    <top>
+        <Label text="Saddam's Pizza Ordering App"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"
+               alignment="CENTER"
+               maxWidth="Infinity"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="20">
+                <VBox spacing="5">
+                    <Label text="Customer Name:"/>
+                    <TextField fx:id="txtCustomerName"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Mobile Number:"/>
+                    <TextField fx:id="txtMobileNumber"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="20">
+                <Label text="Pizza Size:"/>
+                <CheckBox fx:id="cbXL" text="XL"/>
+                <CheckBox fx:id="cbL" text="L"/>
+                <CheckBox fx:id="cbM" text="M"/>
+                <CheckBox fx:id="cbS" text="S"/>
+            </HBox>
+
+            <VBox spacing="5">
+                <Label text="Number of Toppings:"/>
+                <TextField fx:id="txtToppings"/>
+            </VBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add" onAction="#handleAdd"/>
+                <Button text="View" onAction="#handleView"/>
+                <Button text="Update" onAction="#handleUpdate"/>
+                <Button text="Delete" onAction="#handleDelete"/>
+                <Button text="Clear" onAction="#handleClear"/>
+            </HBox>
+
+            <TableView fx:id="tableOrders" prefHeight="200">
+                <columns>
+                    <TableColumn text="Name" fx:id="colName"/>
+                    <TableColumn text="Mobile" fx:id="colMobile"/>
+                    <TableColumn text="Size" fx:id="colSize"/>
+                    <TableColumn text="Toppings" fx:id="colToppings"/>
+                    <TableColumn text="Total ($)" fx:id="colTotal"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
